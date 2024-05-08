@@ -22,7 +22,7 @@ from classes import CLASSES, CUSTOM_TEMPLATES
 def load_clip_to_cpu(visual_backbone):
     backbone_name = visual_backbone
     url = clip._MODELS[backbone_name]
-    model_path = clip._download(url, os.path.expanduser("~/.cache/clip"))
+    model_path = clip._download(url, os.path.expanduser("/fs/nexus-projects/wilddiffusion/gene_diffcls/ballad/clip"))
 
     try:
         # loading JIT archive
@@ -188,7 +188,6 @@ class model ():
         '''
         classnames = CLASSES
         templates = CUSTOM_TEMPLATES['ImageNet']
-
         #with torch.no_grad():
         texts = torch.cat([clip.tokenize(templates.format(c)) for c in classnames])
         texts = texts.cuda()

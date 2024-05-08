@@ -8,7 +8,7 @@ import yaml
 from utils import source_import, get_value
 
 ##change your data root here
-data_root = {'ImageNet': './datasets/ImageNet/',
+data_root = {'ImageNet': '/fs/nexus-datasets/ImageNet/ILSVRC2012',
              'Places': './datasets/Places/'}
 
 parser = argparse.ArgumentParser()
@@ -108,7 +108,6 @@ if not test_mode:
             for x in splits}
 
     training_model = model(config, data, test=False)
-
     training_model.train()
 
 else:

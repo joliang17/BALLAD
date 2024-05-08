@@ -17,11 +17,11 @@ model:
 shuffle: true
 training_opt:
   phaseA: true
-  batch_size: 512
+  batch_size: 2
   dataset: ImageNet_LT
   display_step: 10
   feature_dim: 1024
-  log_dir: ./output_A
+  log_dir: /fs/nexus-projects/wilddiffusion/gene_diffcls/ballad/output_A
   num_classes: 1000
   num_epochs: 50
   num_workers: 12
